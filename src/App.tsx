@@ -6,11 +6,16 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const [contatoreCiccio, setContatoreCiccio] = useState(1);
   return (
     <div className="App">
       <div>
-        <Ciccio mioNome="Rigers" valore={count} />
+        <Ciccio
+          mioNome="Rigers"
+          valore={count}
+          aggiorna={setContatoreCiccio}
+          contatore={contatoreCiccio}
+        />
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -30,6 +35,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <p className="">Il valore di contatore esterono: {contatoreCiccio}</p>
     </div>
   );
 }
